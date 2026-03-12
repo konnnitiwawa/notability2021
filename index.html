@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Notability 2021 風アプリ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="toolbar">
+      <div class="toolbar-left">
+        <button class="tool-btn" data-tool="pen">✏️</button>
+        <button class="tool-btn" data-tool="highlighter">🖍️</button>
+        <button class="tool-btn" data-tool="eraser">🩹</button>
+        <button class="tool-btn" data-tool="lasso">🔲</button>
+      </div>
+
+      <div class="toolbar-center">
+        <label class="color-label">
+          色 <input type="color" id="colorPicker" value="#0055ff" />
+        </label>
+        <label class="size-label">
+          太さ <input type="range" id="sizeRange" min="1" max="40" value="4" />
+        </label>
+      </div>
+
+      <div class="toolbar-right">
+        <button id="undoBtn">↶</button>
+        <button id="redoBtn">↷</button>
+        <label class="image-label">🖼️
+          <input type="file" id="imageInput" accept="image/*" hidden />
+        </label>
+        <button id="clearBtn">🗑️</button>
+      </div>
+    </header>
+
+    <main class="scroll-area">
+      <canvas id="canvas"></canvas>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
