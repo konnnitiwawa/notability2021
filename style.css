@@ -4,12 +4,14 @@ body {
   font-family: system-ui, -apple-system;
 }
 
+/* アプリ全体のレイアウト */
 .app {
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+/* ツールバー */
 .toolbar {
   display: flex;
   justify-content: space-between;
@@ -17,6 +19,7 @@ body {
   background: #ffffffcc;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid #ddd;
+  z-index: 2; /* ← ツールバーを前面に */
 }
 
 .toolbar-left,
@@ -27,6 +30,7 @@ body {
   gap: 6px;
 }
 
+/* ツールボタン */
 .tool-btn {
   border: none;
   background: transparent;
@@ -41,16 +45,21 @@ body {
   color: #0055ff;
 }
 
+/* スクロールエリア（キャンバスの外側） */
 .scroll-area {
   flex: 1;
   overflow-y: scroll;
   padding: 20px;
 }
 
+/* キャンバス本体 */
 #canvas {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 0 0 1px #ddd, 0 8px 20px rgba(0,0,0,0.08);
   display: block;
   margin: 0 auto;
+
+  position: relative;
+  z-index: 1; /* ← キャンバスをツールバーの下に */
 }
