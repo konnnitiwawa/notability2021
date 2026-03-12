@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  background: #f2f2f7;
+  font-family: system-ui, -apple-system;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 12px;
+  background: #ffffffcc;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #ddd;
+}
+
+.toolbar-left,
+.toolbar-center,
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tool-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tool-btn.active {
+  background: #0055ff22;
+  color: #0055ff;
+}
+
+.scroll-area {
+  flex: 1;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+#canvas {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px #ddd, 0 8px 20px rgba(0,0,0,0.08);
+  display: block;
+  margin: 0 auto;
+}
