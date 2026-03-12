@@ -1,3 +1,24 @@
+canvas.addEventListener("touchstart", e => {
+  e.preventDefault();
+  const t = e.touches[0];
+  drawing = true;
+  ctx.beginPath();
+  ctx.moveTo(t.clientX, t.clientY);
+});
+
+canvas.addEventListener("touchmove", e => {
+  e.preventDefault();
+  if (!drawing) return;
+  const t = e.touches[0];
+  ctx.lineWidth = baseStrokeWidth;
+  ctx.strokeStyle = strokeColor;
+  ctx.lineTo(t.clientX, t.clientY);
+  ctx.stroke();
+});
+
+canvas.addEventListener("touchend", () => {
+  drawing = false;
+});
 // ======== 基本要素の取得 ========
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
