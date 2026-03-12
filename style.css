@@ -1,4 +1,5 @@
-body {
+
+#canvas {   touch-action: none; }body {
   margin: 0;
   background: #f2f2f7;
   font-family: system-ui, -apple-system;
@@ -64,3 +65,4 @@ body {
   z-index: 1; /* ← キャンバスをツールバーの下に */
 }
 #canvas {   width: 100%;   height: 2000px; }
+#canvas {   touch-action: none; }
