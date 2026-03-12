@@ -44,23 +44,3 @@ colorPicker.addEventListener("input", () => {
 sizeRange.addEventListener("input", () => {
   baseStrokeWidth = parseInt(sizeRange.value, 10);
 });
-// ======== 描画処理（とりあえず描ける最小構成） ========
-
-canvas.addEventListener("pointerdown", e => {
-  drawing = true;
-  ctx.beginPath();
-  ctx.moveTo(e.clientX - offsetX, e.clientY - offsetY);
-});
-
-canvas.addEventListener("pointermove", e => {
-  if (!drawing) return;
-  ctx.lineWidth = baseStrokeWidth;
-  ctx.strokeStyle = strokeColor;
-  ctx.lineTo(e.clientX - offsetX, e.clientY - offsetY);
-  ctx.stroke();
-});
-
-canvas.addEventListener("pointerup", () => {
-  drawing = false;
-});
-let isDraggingSelection = false;
